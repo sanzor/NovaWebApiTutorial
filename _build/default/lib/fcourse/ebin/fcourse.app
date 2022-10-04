@@ -1,0 +1,13 @@
+{application,fcourse,
+             [{description,"fcourse managed by Nova"},
+              {vsn,"0.1.0"},
+              {registered,[]},
+              {mod,{fcourse_app,[]}},
+              {included_applications,[]},
+              {applications,[kernel,stdlib,nova,eredis]},
+              {env,[]},
+              {modules,[fcourse_app,fcourse_main_controller,fcourse_main_dtl,
+                        fcourse_router,fcourse_sup]},
+              {maintainers,[]},
+              {licenses,["Apache 2.0"]},
+              {links,[]}]}.

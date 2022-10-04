@@ -1,0 +1,20 @@
+%% -*- mode: erlang;erlang-indent-level: 4;indent-tabs-mode: nil -*-
+{application, fcourse,
+ [{description, "fcourse managed by Nova"},
+  {vsn, "0.1.0"},
+  {registered, []},
+  {mod, { fcourse_app, []}},
+  {included_applications, []},
+  {applications,
+   [
+    kernel,
+    stdlib,
+    nova,
+    eredis
+   ]},
+  {env,[]},
+  {modules, []},
+  {maintainers, []},
+  {licenses, ["Apache 2.0"]},
+  {links, []}
+ ]}.

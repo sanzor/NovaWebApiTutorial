@@ -1,11 +1,29 @@
-In this tutorial i will show you how to build an Erlang Web Api using Nova Framework and Redis.
 
+
+
+
+
+![1664886254246](image/Readme/1664886254246.png)
+
+
+
+In this tutorial i will show you how to build an Erlang Web Api using Nova Framework and Redis as a data store.
+
+![1664883753188](image/Readme/1664883753188.png)
+
+This will be a simple web api supporting the following operations over a group of users.
+
+* Create user
+* Update user
+* Delete user
+* Get user by id
+* Get all users
 
 **The repository containing the code as well as the tutorial can be found** [here](https://github.com/sanzor/Nova_Api)
 
-For those of you that have already installed the prerequisites whic are : **Erlang **, **Rebar **, **Nova  **you can skip this part:
+For those of you that have already installed the prerequisites whic are : Erlang , Rebar,Nova  **you can skip this part:
 
-**Setup**
+**## Setup**
 
 1. Install Redis on your computer and start the redis server using the command `redis-server`
 2. Installing Erlang: [Setup | Adopting Erlang](https://adoptingerlang.org/docs/development/setup/)
@@ -26,13 +44,12 @@ rebar3 new nova fcourse
 
 This tells rebar to create a new project named `fcourse` using the `nova` template.
 
-![Generated Folder Structure](image/Readme/1664558789654.png)
-
 First thing we are going to edit is the `rebar.config` file by adding the redis client library dependency like below:
 
-**rebar.config**
 
 ```bash
+# rebar.config
+
 {deps, [
         nova,
         {flatlog, "0.1.2"},
@@ -40,11 +57,8 @@ First thing we are going to edit is the `rebar.config` file by adding the redis 
        ]}.
 ```
 
-We added `eredis` (redis erlang client library) dependency from `git` at the given `url` using the `master` branch.
 
-Add the `eredis` depedency in the `src/fcourse.app.src` file , the place where our application , `fcourse` is setup:
-
-**src/fcourse/fcourse.app.src**
+Add the `eredis` depedency in the `src/fcourse.app.src` file :
 
 ```
 {application, fcourse,
@@ -69,13 +83,16 @@ Add the `eredis` depedency in the `src/fcourse.app.src` file , the place where o
 
 ```
 
+
+
 Defining the routes:
+
+In the router module the routes are defined as follows:  `{Path, {Controller_Name,Controller_Method}, #{methods =>[options, HTTPMethod]}`
 
 In the `fcourse_router.erl` which contains the routing logic add the specific CRUD methods like below:
 
-**fcourse_router.erl**
-
 ```bash
+#  fcourse_router.erl
 -module(fcourse_router).
 -behaviour(nova_router).
 
@@ -85,7 +102,7 @@ In the `fcourse_router.erl` which contains the routing logic add the specific CR
 
 %% The Environment-variable is defined in your sys.config in {nova, [{environment, Value}]}
 routes(_Environment) ->
-    [#{prefix => "/users",
+    [#{prefix => "/users",   # you cand add a prefix to your routes
       security => false,
       routes => [
         {"/", { fcourse_main_controller, index}, #{methods => [options,get]}},
@@ -99,13 +116,8 @@ routes(_Environment) ->
       }].
 ```
 
-This is the place where the routing logic takes place. The values from `routes` are of the form:
 
-`{Path, {Controller_Name,Controller_Method}, #{methods =>[options, HTTPMethod]}`
-
-We have also set up a `prefix` with the value `users`. Therefore when we want to hit a route from `routes` we need to put the prefix as well e.g :  `/users/add`
-
-**Adding the CRUD endpoints:**
+**# Implementing the CRUD endpoints:**
 
 We will write the logic for the CRUD endpoints in the controller which is `controllers/fcourse_main_controller.erl` file.
 
@@ -137,7 +149,7 @@ add(#{json := #{<<"id">> := Id , <<"age">> := Age}})->
     end.
 ```
 
-`#{}` is the equivalent of a map in Erlang.    The `json` key contains another map which is the body of the json that we send in the request. In our case we will send something like :
+The argument is a map that holds a key `json`. The `json` key contains a json like the one below:
 
 ```bash
 {
@@ -147,7 +159,7 @@ add(#{json := #{<<"id">> := Id , <<"age">> := Age}})->
 
 ```
 
-`#{<<"id">> := Id , <<"age">> := Age }})` - We are deconstructing the input variable and binding the values of interest like the `id` and the `age`  values to variables (`Id` and `Age`) which we will later use in the method. The `<<"Something">>` is Erlang's binary format ,meaning `"Something"` is a string that is being received as a byte array.
+We are deconstructing the input argument  and binding the values of the json like `id` and the `age`  to variables (`Id` and `Age`) . We then use the bound variables in our logic:
 
 ```bash
         {ok,Port}=eredis:start_link(), 
@@ -155,9 +167,9 @@ add(#{json := #{<<"id">> := Id , <<"age">> := Age}})->
         {json,200,#{},#{<<"result">> => Result}}
 ```
 
-We are starting a connection to redis that will be stored in the `Port` variable. We then issue the redis `HSET` command , using the `Port` as the connection , `users` as the hash and [Id,Age] as the Key-Value.
-
-We then return a json , a status code 200 , and the json of the form:
+* We are starting a connection to redis that will be stored in the `Port` variable.
+* We then issue the redis `HSET` command , using the `Port` as the connection , `users` as the hash and `[Id,Age]` as the Key-Value.
+* We then return a json , a status code `200` , and the json of the form:
 
 ```bash
 {
@@ -166,6 +178,8 @@ We then return a json , a status code 200 , and the json of the form:
 ```
 
 So this is how we add items !
+
+---
 
 **ENDPOINT: Get by Id**
 
@@ -192,7 +206,8 @@ We could add other variables in the query string separated by comma e.g:
 
 This would translate to :  `users/get?user=UserId&age=Age`
 
-Again we start a connection to redis, but now we use the redis command `HGET`, which fetches the key `UserId` from the hash `users`
+* we start a connection to redis
+* we use the redis command `HGET`, which fetches the key `UserId` from the hash `users` and treat its result with a `case` clause specific to erlang
 
 ```bash
 case eredis:q(Port,["hget","users",UserId]) of
@@ -201,18 +216,16 @@ case eredis:q(Port,["hget","users",UserId]) of
         end
 ```
 
-1. If result of eredis `HGET` command is of the form `{ok,Result}` we return a json with the statuscode `200`  and the json `{ "UserId": UserId , "value" : Result }` , and we also use `list_to_binary ` to transform the value in a binary .
-2. If the result is anything else (`_` means wildcard , we don't care) ,we return a status code of `404`
+* If result of eredis `HGET` command is of the form `{ok,Result}` we return a json with the statuscode `200`  and the json `{ "UserId": UserId , "value" : Result }` , and we also use `list_to_binary ` to transform the value in a binary .
+* If the result is anything else (`_` means wildcard , we don't care) ,we return a status code of `404`
 
-Everything is in a `try-catch ` clause in case connection to redis fail
+Everything is in a `try-catch ` clause in case connection to redis fails in which case we can pattern match on the `Error:Cause` and  return a json with the status code `500` and the said `Error,Cause`
 
-```
-```s in which case we can pattern match on the `Error:Cause` and  return a json with the status code `500` and the said `Error,Cause`
-
+---
 
 **ENDPOINT: Get All**
 
-```bash
+```
 getall(_Request)->
     try
         {ok,Port}=eredis:start_link(),
@@ -226,7 +239,11 @@ getall(_Request)->
     end.
 ```
 
-We run the redis command `HGETALL` on the `users` key, which is a hashset and we receive a result of the form:  `[Key1,Value1,Key2,Value2.....]`
+We run the redis command `HGETALL` on the `users` key, which is a hashset and we receive a result of the form:
+
+```
+ [Key1,Value1,Key2,Value2.....]
+```
 
 We want to return a list of key values so we will use these two helper methods:
 
@@ -235,10 +252,12 @@ Helper methods:
 ```bash
 
 # first method
+# checks if argument is list and then if the list is odd , nr of keys has to be equal to those of values 
+
 split(List) when is_list(List) ->
     case length(List) rem 2 of
-        0 -> split(List,[]);
-        1 -> throw(odd_list)
+        0 -> split(List,[]);     #calls the second method
+        1 -> throw(odd_list)   
 end.
 
 #second method
@@ -247,17 +266,17 @@ split([Key,Value|Rest],Accu)->split(Rest,[#{Key=> Value}|Accu]).
 
 ```
 
-The first method calls the second method only when the argument is a list. We also need an even list , each key with its value. We throw an exception is the list is `odd` with the `Reason`  `odd_list`.
-
 The second method is a tailrecursive one.
 
 `split([],Accu)->Accu;`
 
-The first clause is the stop condition , when the first argument is the `[]` which means an empty list,therefore,  we return the second argument , the accumulator (`Accu`).
+The first clause is the stop condition, when the first argument is the `[]` which means an empty list,therefore,  we return the second argument , the accumulator (`Accu`).
 
 `split([Key,Value|Rest],Accu)->split(Rest,[#{Key=> Value}|Accu]).`
 
 The second clause decomposes the first argument in `[Key,Value | Rest]` basically extracting 2 elements at a time from the original list , and calling itself again with `Rest` as the new starting list , and   the map `#{Key => Value}` appended on top of the `Accumulator`.
+
+---
 
 **ENDPOINT: Delete**
 
@@ -279,6 +298,8 @@ We start connection to redis , and then issue the redis command `HDEL` which del
 
 When exception we return status `500`  and the json `{ "error": Error ,"cause": Cause}`
 
+---
+
 **ENDPOINT: Update**
 
 In this endpoint we just want to update the `age` of the user.
@@ -298,15 +319,13 @@ update(#{json := #{<<"user">> := User , <<"new_age">> := NewAge}})->
 
 ```
 
-We receive the `json` `{"user" : User" , "new_age":Age}` bind the values to said variables.
+We the `HGET` redis command like we did in the get-by-id endpoint.
 
-Next we open connection to redis .
-
-We then try to fetch the user with the id `User` from the hash `users` .
-
-If redis returns us the result `{ok,OldAge}` we then set the value of the key `User` within the `users` hash to value `Age`, and return status code `200`.
+If redis returns us the result `{ok,OldAge} `we then set the value of the key `User `within the `users `hash to value `Age `, and return status code `200`.
 
 Otherwise we return the status code `500` with the `{ "error": Error ,"cause": Cause}` json.
+
+---
 
 **Putting it all togeter in the controller module:**
 
@@ -393,4 +412,8 @@ From the root folder of the application run the command :  `rebar3 nova serve` ,
 
 ![](image/Readme/1664566537315.png)![](image/Readme/1664565644564.png)
 
-Use Postman to add a user, fetch it
+Once the application is built , we have finished ! Voila ! 
+
+The application can be tested 
+
+A  step by step video implementation will also follow soon, stay tuned !

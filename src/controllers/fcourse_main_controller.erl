@@ -13,15 +13,15 @@ end.
 split([],Accu)->Accu;
 split([Key,Value|Rest],Accu)->split(Rest,[#{Key => Value}|Accu]).
 
-get(#{ bindings := #{<<"user">> := UserId}})->
+get(#{ parsed_qs := #{<<"user">> := UserId}})->
     try
         {ok,Port}=eredis:start_link(),
         case eredis:q(Port,["hget","users",UserId]) of
-            {ok,Result} ->{json,200,#{},#{<<"UserId">> => list_to_binary(UserId) , <<"value">> => Result}};
+            {ok,Result} ->{json,200,#{},#{<<"UserId">> => UserId , <<"value">> => Result}};
              _ -> {status,404}
         end
     catch
-        Error:Cause -> {json,500,#{<<"Authorization">> => <<"Basic 1212121">>, <<"Content-Type">> => <<"json">>},#{<<"error">> =>Error , <<"cause">> => Cause}}
+        Error:Cause -> {json,500,#{},#{<<"error">> =>Error , <<"cause">> => Cause}}
     end.
 
 getall(_Request)->
@@ -44,7 +44,7 @@ add(#{json := #{<<"id">> := Id , <<"age">> := Age}})->
         Error:Cause -> {json,500,#{<<"Content-Type">> => <<"json">>},#{<<"error">> =>Error , <<"cause">> => Cause}}
     end.
 
-delete(#{bindings := #{<<"id">> :=Id}})->
+delete(#{parsed_qs := #{<<"id">> :=Id}})->
     try
         {ok,Port}=eredis:start_link(),
         {ok,_}=eredis:q(Port,["hdel","users",Id]),

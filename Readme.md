@@ -1,11 +1,4 @@
-
-
-
-
-
 ![1664886254246](image/Readme/1664886254246.png)
-
-
 
 In this tutorial i will show you how to build an Erlang Web Api using Nova Framework and Redis as a data store.
 
@@ -21,7 +14,9 @@ This will be a simple web api supporting the following operations over a group o
 
 **The repository containing the code as well as the tutorial can be found** [here](https://github.com/sanzor/Nova_Api)
 
-For those of you that have already installed the prerequisites whic are : Erlang , Rebar,Nova  **you can skip this part:
+---
+
+For those of you that have already installed the prerequisites which are : Erlang , Rebar,Nova  **you can skip this part:
 
 **## Setup**
 
@@ -46,7 +41,6 @@ This tells rebar to create a new project named `fcourse` using the `nova` templa
 
 First thing we are going to edit is the `rebar.config` file by adding the redis client library dependency like below:
 
-
 ```bash
 # rebar.config
 
@@ -57,6 +51,7 @@ First thing we are going to edit is the `rebar.config` file by adding the redis 
        ]}.
 ```
 
+Next 
 
 Add the `eredis` depedency in the `src/fcourse.app.src` file :
 
@@ -83,7 +78,17 @@ Add the `eredis` depedency in the `src/fcourse.app.src` file :
 
 ```
 
+Add the following plugin to the `config/dev_sys.config.src` file so that nova will know how to decode json:
 
+`{pre_request, nova_request_plugin, #{decode_json_body => true}}`
+
+**dev_sys.config.src**
+
+![1664944753773](image/Readme/1664944753773.png) `![1664944746826](image/Readme/1664944746826.png`
+
+In production nova will use the `prod_sys.config.src `so you will need to edit that file too like above.
+
+---
 
 Defining the routes:
 
@@ -115,7 +120,6 @@ routes(_Environment) ->
                 ]
       }].
 ```
-
 
 **# Implementing the CRUD endpoints:**
 
@@ -412,8 +416,14 @@ From the root folder of the application run the command :  `rebar3 nova serve` ,
 
 ![](image/Readme/1664566537315.png)![](image/Readme/1664565644564.png)
 
-Once the application is built , we have finished ! Voila ! 
+Once the application is built , we have finished ! Voila !
 
-The application can be tested 
+The application can be tested via postman like below:
+
+**Adding a user**
+
+![1664945181743](image/Readme/1664945181743.png)
+
+**Fetching a user**
 
 A  step by step video implementation will also follow soon, stay tuned !

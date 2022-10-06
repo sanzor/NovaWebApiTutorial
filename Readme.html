@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Readme.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+@font-face{font-family:KaTeX_AMS;src:url(fonts/KaTeX_AMS-Regular.eot);src:url(fonts/KaTeX_AMS-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_AMS-Regular.woff2) format('woff2'),url(fonts/KaTeX_AMS-Regular.woff) format('woff'),url(fonts/KaTeX_AMS-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Caligraphic;src:url(fonts/KaTeX_Caligraphic-Bold.eot);src:url(fonts/KaTeX_Caligraphic-Bold.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Caligraphic-Bold.woff2) format('woff2'),url(fonts/KaTeX_Caligraphic-Bold.woff) format('woff'),url(fonts/KaTeX_Caligraphic-Bold.ttf) format('ttf');font-weight:700;font-style:normal}@font-face{font-family:KaTeX_Caligraphic;src:url(fonts/KaTeX_Caligraphic-Regular.eot);src:url(fonts/KaTeX_Caligraphic-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Caligraphic-Regular.woff2) format('woff2'),url(fonts/KaTeX_Caligraphic-Regular.woff) format('woff'),url(fonts/KaTeX_Caligraphic-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Fraktur;src:url(fonts/KaTeX_Fraktur-Bold.eot);src:url(fonts/KaTeX_Fraktur-Bold.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Fraktur-Bold.woff2) format('woff2'),url(fonts/KaTeX_Fraktur-Bold.woff) format('woff'),url(fonts/KaTeX_Fraktur-Bold.ttf) format('ttf');font-weight:700;font-style:normal}@font-face{font-family:KaTeX_Fraktur;src:url(fonts/KaTeX_Fraktur-Regular.eot);src:url(fonts/KaTeX_Fraktur-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Fraktur-Regular.woff2) format('woff2'),url(fonts/KaTeX_Fraktur-Regular.woff) format('woff'),url(fonts/KaTeX_Fraktur-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Main;src:url(fonts/KaTeX_Main-Bold.eot);src:url(fonts/KaTeX_Main-Bold.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Main-Bold.woff2) format('woff2'),url(fonts/KaTeX_Main-Bold.woff) format('woff'),url(fonts/KaTeX_Main-Bold.ttf) format('ttf');font-weight:700;font-style:normal}@font-face{font-family:KaTeX_Main;src:url(fonts/KaTeX_Main-Italic.eot);src:url(fonts/KaTeX_Main-Italic.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Main-Italic.woff2) format('woff2'),url(fonts/KaTeX_Main-Italic.woff) format('woff'),url(fonts/KaTeX_Main-Italic.ttf) format('ttf');font-weight:400;font-style:italic}@font-face{font-family:KaTeX_Main;src:url(fonts/KaTeX_Main-Regular.eot);src:url(fonts/KaTeX_Main-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Main-Regular.woff2) format('woff2'),url(fonts/KaTeX_Main-Regular.woff) format('woff'),url(fonts/KaTeX_Main-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Math;src:url(fonts/KaTeX_Math-Italic.eot);src:url(fonts/KaTeX_Math-Italic.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Math-Italic.woff2) format('woff2'),url(fonts/KaTeX_Math-Italic.woff) format('woff'),url(fonts/KaTeX_Math-Italic.ttf) format('ttf');font-weight:400;font-style:italic}@font-face{font-family:KaTeX_SansSerif;src:url(fonts/KaTeX_SansSerif-Regular.eot);src:url(fonts/KaTeX_SansSerif-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_SansSerif-Regular.woff2) format('woff2'),url(fonts/KaTeX_SansSerif-Regular.woff) format('woff'),url(fonts/KaTeX_SansSerif-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Script;src:url(fonts/KaTeX_Script-Regular.eot);src:url(fonts/KaTeX_Script-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Script-Regular.woff2) format('woff2'),url(fonts/KaTeX_Script-Regular.woff) format('woff'),url(fonts/KaTeX_Script-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Size1;src:url(fonts/KaTeX_Size1-Regular.eot);src:url(fonts/KaTeX_Size1-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Size1-Regular.woff2) format('woff2'),url(fonts/KaTeX_Size1-Regular.woff) format('woff'),url(fonts/KaTeX_Size1-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Size2;src:url(fonts/KaTeX_Size2-Regular.eot);src:url(fonts/KaTeX_Size2-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Size2-Regular.woff2) format('woff2'),url(fonts/KaTeX_Size2-Regular.woff) format('woff'),url(fonts/KaTeX_Size2-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Size3;src:url(fonts/KaTeX_Size3-Regular.eot);src:url(fonts/KaTeX_Size3-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Size3-Regular.woff2) format('woff2'),url(fonts/KaTeX_Size3-Regular.woff) format('woff'),url(fonts/KaTeX_Size3-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Size4;src:url(fonts/KaTeX_Size4-Regular.eot);src:url(fonts/KaTeX_Size4-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Size4-Regular.woff2) format('woff2'),url(fonts/KaTeX_Size4-Regular.woff) format('woff'),url(fonts/KaTeX_Size4-Regular.ttf) format('ttf');font-weight:400;font-style:normal}@font-face{font-family:KaTeX_Typewriter;src:url(fonts/KaTeX_Typewriter-Regular.eot);src:url(fonts/KaTeX_Typewriter-Regular.eot#iefix) format('embedded-opentype'),url(fonts/KaTeX_Typewriter-Regular.woff2) format('woff2'),url(fonts/KaTeX_Typewriter-Regular.woff) format('woff'),url(fonts/KaTeX_Typewriter-Regular.ttf) format('ttf');font-weight:400;font-style:normal}.katex-display{display:block;margin:1em 0;text-align:center}.katex-display>.katex{display:inline-block}.katex{font:400 1.21em KaTeX_Main;line-height:1.2;white-space:nowrap;text-indent:0}.katex .katex-html{display:inline-block}.katex .katex-mathml{position:absolute;clip:rect(1px,1px,1px,1px);padding:0;border:0;height:1px;width:1px;overflow:hidden}.katex .base,.katex .strut{display:inline-block}.katex .mathit{font-family:KaTeX_Math;font-style:italic}.katex .mathbf{font-family:KaTeX_Main;font-weight:700}.katex .amsrm,.katex .mathbb{font-family:KaTeX_AMS}.katex .mathcal{font-family:KaTeX_Caligraphic}.katex .mathfrak{font-family:KaTeX_Fraktur}.katex .mathtt{font-family:KaTeX_Typewriter}.katex .mathscr{font-family:KaTeX_Script}.katex .mathsf{font-family:KaTeX_SansSerif}.katex .mainit{font-family:KaTeX_Main;font-style:italic}.katex .textstyle>.mord+.mop{margin-left:.16667em}.katex .textstyle>.mord+.mbin{margin-left:.22222em}.katex .textstyle>.mord+.mrel{margin-left:.27778em}.katex .textstyle>.mop+.mop,.katex .textstyle>.mop+.mord,.katex .textstyle>.mord+.minner{margin-left:.16667em}.katex .textstyle>.mop+.mrel{margin-left:.27778em}.katex .textstyle>.mop+.minner{margin-left:.16667em}.katex .textstyle>.mbin+.minner,.katex .textstyle>.mbin+.mop,.katex .textstyle>.mbin+.mopen,.katex .textstyle>.mbin+.mord{margin-left:.22222em}.katex .textstyle>.mrel+.minner,.katex .textstyle>.mrel+.mop,.katex .textstyle>.mrel+.mopen,.katex .textstyle>.mrel+.mord{margin-left:.27778em}.katex .textstyle>.mclose+.mop{margin-left:.16667em}.katex .textstyle>.mclose+.mbin{margin-left:.22222em}.katex .textstyle>.mclose+.mrel{margin-left:.27778em}.katex .textstyle>.mclose+.minner,.katex .textstyle>.minner+.mop,.katex .textstyle>.minner+.mord,.katex .textstyle>.mpunct+.mclose,.katex .textstyle>.mpunct+.minner,.katex .textstyle>.mpunct+.mop,.katex .textstyle>.mpunct+.mopen,.katex .textstyle>.mpunct+.mord,.katex .textstyle>.mpunct+.mpunct,.katex .textstyle>.mpunct+.mrel{margin-left:.16667em}.katex .textstyle>.minner+.mbin{margin-left:.22222em}.katex .textstyle>.minner+.mrel{margin-left:.27778em}.katex .mclose+.mop,.katex .minner+.mop,.katex .mop+.mop,.katex .mop+.mord,.katex .mord+.mop,.katex .textstyle>.minner+.minner,.katex .textstyle>.minner+.mopen,.katex .textstyle>.minner+.mpunct{margin-left:.16667em}.katex .reset-textstyle.textstyle{font-size:1em}.katex .reset-textstyle.scriptstyle{font-size:.7em}.katex .reset-textstyle.scriptscriptstyle{font-size:.5em}.katex .reset-scriptstyle.textstyle{font-size:1.42857em}.katex .reset-scriptstyle.scriptstyle{font-size:1em}.katex .reset-scriptstyle.scriptscriptstyle{font-size:.71429em}.katex .reset-scriptscriptstyle.textstyle{font-size:2em}.katex .reset-scriptscriptstyle.scriptstyle{font-size:1.4em}.katex .reset-scriptscriptstyle.scriptscriptstyle{font-size:1em}.katex .style-wrap{position:relative}.katex .vlist{display:inline-block}.katex .vlist>span{display:block;height:0;position:relative}.katex .vlist>span>span{display:inline-block}.katex .vlist .baseline-fix{display:inline-table;table-layout:fixed}.katex .msupsub{text-align:left}.katex .mfrac>span>span{text-align:center}.katex .mfrac .frac-line{width:100%}.katex .mfrac .frac-line:before{border-bottom-style:solid;border-bottom-width:1px;content:"";display:block}.katex .mfrac .frac-line:after{border-bottom-style:solid;border-bottom-width:.04em;content:"";display:block;margin-top:-1px}.katex .mspace{display:inline-block}.katex .mspace.negativethinspace{margin-left:-.16667em}.katex .mspace.thinspace{width:.16667em}.katex .mspace.mediumspace{width:.22222em}.katex .mspace.thickspace{width:.27778em}.katex .mspace.enspace{width:.5em}.katex .mspace.quad{width:1em}.katex .mspace.qquad{width:2em}.katex .llap,.katex .rlap{width:0;position:relative}.katex .llap>.inner,.katex .rlap>.inner{position:absolute}.katex .llap>.fix,.katex .rlap>.fix{display:inline-block}.katex .llap>.inner{right:0}.katex .rlap>.inner{left:0}.katex .katex-logo .a{font-size:.75em;margin-left:-.32em;position:relative;top:-.2em}.katex .katex-logo .t{margin-left:-.23em}.katex .katex-logo .e{margin-left:-.1667em;position:relative;top:.2155em}.katex .katex-logo .x{margin-left:-.125em}.katex .rule{display:inline-block;border-style:solid;position:relative}.katex .overline .overline-line{width:100%}.katex .overline .overline-line:before{border-bottom-style:solid;border-bottom-width:1px;content:"";display:block}.katex .overline .overline-line:after{border-bottom-style:solid;border-bottom-width:.04em;content:"";display:block;margin-top:-1px}.katex .sqrt>.sqrt-sign{position:relative}.katex .sqrt .sqrt-line{width:100%}.katex .sqrt .sqrt-line:before{border-bottom-style:solid;border-bottom-width:1px;content:"";display:block}.katex .sqrt .sqrt-line:after{border-bottom-style:solid;border-bottom-width:.04em;content:"";display:block;margin-top:-1px}.katex .sqrt>.root{margin-left:.27777778em;margin-right:-.55555556em}.katex .fontsize-ensurer,.katex .sizing{display:inline-block}.katex .fontsize-ensurer.reset-size1.size1,.katex .sizing.reset-size1.size1{font-size:1em}.katex .fontsize-ensurer.reset-size1.size2,.katex .sizing.reset-size1.size2{font-size:1.4em}.katex .fontsize-ensurer.reset-size1.size3,.katex .sizing.reset-size1.size3{font-size:1.6em}.katex .fontsize-ensurer.reset-size1.size4,.katex .sizing.reset-size1.size4{font-size:1.8em}.katex .fontsize-ensurer.reset-size1.size5,.katex .sizing.reset-size1.size5{font-size:2em}.katex .fontsize-ensurer.reset-size1.size6,.katex .sizing.reset-size1.size6{font-size:2.4em}.katex .fontsize-ensurer.reset-size1.size7,.katex .sizing.reset-size1.size7{font-size:2.88em}.katex .fontsize-ensurer.reset-size1.size8,.katex .sizing.reset-size1.size8{font-size:3.46em}.katex .fontsize-ensurer.reset-size1.size9,.katex .sizing.reset-size1.size9{font-size:4.14em}.katex .fontsize-ensurer.reset-size1.size10,.katex .sizing.reset-size1.size10{font-size:4.98em}.katex .fontsize-ensurer.reset-size2.size1,.katex .sizing.reset-size2.size1{font-size:.71428571em}.katex .fontsize-ensurer.reset-size2.size2,.katex .sizing.reset-size2.size2{font-size:1em}.katex .fontsize-ensurer.reset-size2.size3,.katex .sizing.reset-size2.size3{font-size:1.14285714em}.katex .fontsize-ensurer.reset-size2.size4,.katex .sizing.reset-size2.size4{font-size:1.28571429em}.katex .fontsize-ensurer.reset-size2.size5,.katex .sizing.reset-size2.size5{font-size:1.42857143em}.katex .fontsize-ensurer.reset-size2.size6,.katex .sizing.reset-size2.size6{font-size:1.71428571em}.katex .fontsize-ensurer.reset-size2.size7,.katex .sizing.reset-size2.size7{font-size:2.05714286em}.katex .fontsize-ensurer.reset-size2.size8,.katex .sizing.reset-size2.size8{font-size:2.47142857em}.katex .fontsize-ensurer.reset-size2.size9,.katex .sizing.reset-size2.size9{font-size:2.95714286em}.katex .fontsize-ensurer.reset-size2.size10,.katex .sizing.reset-size2.size10{font-size:3.55714286em}.katex .fontsize-ensurer.reset-size3.size1,.katex .sizing.reset-size3.size1{font-size:.625em}.katex .fontsize-ensurer.reset-size3.size2,.katex .sizing.reset-size3.size2{font-size:.875em}.katex .fontsize-ensurer.reset-size3.size3,.katex .sizing.reset-size3.size3{font-size:1em}.katex .fontsize-ensurer.reset-size3.size4,.katex .sizing.reset-size3.size4{font-size:1.125em}.katex .fontsize-ensurer.reset-size3.size5,.katex .sizing.reset-size3.size5{font-size:1.25em}.katex .fontsize-ensurer.reset-size3.size6,.katex .sizing.reset-size3.size6{font-size:1.5em}.katex .fontsize-ensurer.reset-size3.size7,.katex .sizing.reset-size3.size7{font-size:1.8em}.katex .fontsize-ensurer.reset-size3.size8,.katex .sizing.reset-size3.size8{font-size:2.1625em}.katex .fontsize-ensurer.reset-size3.size9,.katex .sizing.reset-size3.size9{font-size:2.5875em}.katex .fontsize-ensurer.reset-size3.size10,.katex .sizing.reset-size3.size10{font-size:3.1125em}.katex .fontsize-ensurer.reset-size4.size1,.katex .sizing.reset-size4.size1{font-size:.55555556em}.katex .fontsize-ensurer.reset-size4.size2,.katex .sizing.reset-size4.size2{font-size:.77777778em}.katex .fontsize-ensurer.reset-size4.size3,.katex .sizing.reset-size4.size3{font-size:.88888889em}.katex .fontsize-ensurer.reset-size4.size4,.katex .sizing.reset-size4.size4{font-size:1em}.katex .fontsize-ensurer.reset-size4.size5,.katex .sizing.reset-size4.size5{font-size:1.11111111em}.katex .fontsize-ensurer.reset-size4.size6,.katex .sizing.reset-size4.size6{font-size:1.33333333em}.katex .fontsize-ensurer.reset-size4.size7,.katex .sizing.reset-size4.size7{font-size:1.6em}.katex .fontsize-ensurer.reset-size4.size8,.katex .sizing.reset-size4.size8{font-size:1.92222222em}.katex .fontsize-ensurer.reset-size4.size9,.katex .sizing.reset-size4.size9{font-size:2.3em}.katex .fontsize-ensurer.reset-size4.size10,.katex .sizing.reset-size4.size10{font-size:2.76666667em}.katex .fontsize-ensurer.reset-size5.size1,.katex .sizing.reset-size5.size1{font-size:.5em}.katex .fontsize-ensurer.reset-size5.size2,.katex .sizing.reset-size5.size2{font-size:.7em}.katex .fontsize-ensurer.reset-size5.size3,.katex .sizing.reset-size5.size3{font-size:.8em}.katex .fontsize-ensurer.reset-size5.size4,.katex .sizing.reset-size5.size4{font-size:.9em}.katex .fontsize-ensurer.reset-size5.size5,.katex .sizing.reset-size5.size5{font-size:1em}.katex .fontsize-ensurer.reset-size5.size6,.katex .sizing.reset-size5.size6{font-size:1.2em}.katex .fontsize-ensurer.reset-size5.size7,.katex .sizing.reset-size5.size7{font-size:1.44em}.katex .fontsize-ensurer.reset-size5.size8,.katex .sizing.reset-size5.size8{font-size:1.73em}.katex .fontsize-ensurer.reset-size5.size9,.katex .sizing.reset-size5.size9{font-size:2.07em}.katex .fontsize-ensurer.reset-size5.size10,.katex .sizing.reset-size5.size10{font-size:2.49em}.katex .fontsize-ensurer.reset-size6.size1,.katex .sizing.reset-size6.size1{font-size:.41666667em}.katex .fontsize-ensurer.reset-size6.size2,.katex .sizing.reset-size6.size2{font-size:.58333333em}.katex .fontsize-ensurer.reset-size6.size3,.katex .sizing.reset-size6.size3{font-size:.66666667em}.katex .fontsize-ensurer.reset-size6.size4,.katex .sizing.reset-size6.size4{font-size:.75em}.katex .fontsize-ensurer.reset-size6.size5,.katex .sizing.reset-size6.size5{font-size:.83333333em}.katex .fontsize-ensurer.reset-size6.size6,.katex .sizing.reset-size6.size6{font-size:1em}.katex .fontsize-ensurer.reset-size6.size7,.katex .sizing.reset-size6.size7{font-size:1.2em}.katex .fontsize-ensurer.reset-size6.size8,.katex .sizing.reset-size6.size8{font-size:1.44166667em}.katex .fontsize-ensurer.reset-size6.size9,.katex .sizing.reset-size6.size9{font-size:1.725em}.katex .fontsize-ensurer.reset-size6.size10,.katex .sizing.reset-size6.size10{font-size:2.075em}.katex .fontsize-ensurer.reset-size7.size1,.katex .sizing.reset-size7.size1{font-size:.34722222em}.katex .fontsize-ensurer.reset-size7.size2,.katex .sizing.reset-size7.size2{font-size:.48611111em}.katex .fontsize-ensurer.reset-size7.size3,.katex .sizing.reset-size7.size3{font-size:.55555556em}.katex .fontsize-ensurer.reset-size7.size4,.katex .sizing.reset-size7.size4{font-size:.625em}.katex .fontsize-ensurer.reset-size7.size5,.katex .sizing.reset-size7.size5{font-size:.69444444em}.katex .fontsize-ensurer.reset-size7.size6,.katex .sizing.reset-size7.size6{font-size:.83333333em}.katex .fontsize-ensurer.reset-size7.size7,.katex .sizing.reset-size7.size7{font-size:1em}.katex .fontsize-ensurer.reset-size7.size8,.katex .sizing.reset-size7.size8{font-size:1.20138889em}.katex .fontsize-ensurer.reset-size7.size9,.katex .sizing.reset-size7.size9{font-size:1.4375em}.katex .fontsize-ensurer.reset-size7.size10,.katex .sizing.reset-size7.size10{font-size:1.72916667em}.katex .fontsize-ensurer.reset-size8.size1,.katex .sizing.reset-size8.size1{font-size:.28901734em}.katex .fontsize-ensurer.reset-size8.size2,.katex .sizing.reset-size8.size2{font-size:.40462428em}.katex .fontsize-ensurer.reset-size8.size3,.katex .sizing.reset-size8.size3{font-size:.46242775em}.katex .fontsize-ensurer.reset-size8.size4,.katex .sizing.reset-size8.size4{font-size:.52023121em}.katex .fontsize-ensurer.reset-size8.size5,.katex .sizing.reset-size8.size5{font-size:.57803468em}.katex .fontsize-ensurer.reset-size8.size6,.katex .sizing.reset-size8.size6{font-size:.69364162em}.katex .fontsize-ensurer.reset-size8.size7,.katex .sizing.reset-size8.size7{font-size:.83236994em}.katex .fontsize-ensurer.reset-size8.size8,.katex .sizing.reset-size8.size8{font-size:1em}.katex .fontsize-ensurer.reset-size8.size9,.katex .sizing.reset-size8.size9{font-size:1.19653179em}.katex .fontsize-ensurer.reset-size8.size10,.katex .sizing.reset-size8.size10{font-size:1.43930636em}.katex .fontsize-ensurer.reset-size9.size1,.katex .sizing.reset-size9.size1{font-size:.24154589em}.katex .fontsize-ensurer.reset-size9.size2,.katex .sizing.reset-size9.size2{font-size:.33816425em}.katex .fontsize-ensurer.reset-size9.size3,.katex .sizing.reset-size9.size3{font-size:.38647343em}.katex .fontsize-ensurer.reset-size9.size4,.katex .sizing.reset-size9.size4{font-size:.43478261em}.katex .fontsize-ensurer.reset-size9.size5,.katex .sizing.reset-size9.size5{font-size:.48309179em}.katex .fontsize-ensurer.reset-size9.size6,.katex .sizing.reset-size9.size6{font-size:.57971014em}.katex .fontsize-ensurer.reset-size9.size7,.katex .sizing.reset-size9.size7{font-size:.69565217em}.katex .fontsize-ensurer.reset-size9.size8,.katex .sizing.reset-size9.size8{font-size:.83574879em}.katex .fontsize-ensurer.reset-size9.size9,.katex .sizing.reset-size9.size9{font-size:1em}.katex .fontsize-ensurer.reset-size9.size10,.katex .sizing.reset-size9.size10{font-size:1.20289855em}.katex .fontsize-ensurer.reset-size10.size1,.katex .sizing.reset-size10.size1{font-size:.20080321em}.katex .fontsize-ensurer.reset-size10.size2,.katex .sizing.reset-size10.size2{font-size:.2811245em}.katex .fontsize-ensurer.reset-size10.size3,.katex .sizing.reset-size10.size3{font-size:.32128514em}.katex .fontsize-ensurer.reset-size10.size4,.katex .sizing.reset-size10.size4{font-size:.36144578em}.katex .fontsize-ensurer.reset-size10.size5,.katex .sizing.reset-size10.size5{font-size:.40160643em}.katex .fontsize-ensurer.reset-size10.size6,.katex .sizing.reset-size10.size6{font-size:.48192771em}.katex .fontsize-ensurer.reset-size10.size7,.katex .sizing.reset-size10.size7{font-size:.57831325em}.katex .fontsize-ensurer.reset-size10.size8,.katex .sizing.reset-size10.size8{font-size:.69477912em}.katex .fontsize-ensurer.reset-size10.size9,.katex .sizing.reset-size10.size9{font-size:.8313253em}.katex .fontsize-ensurer.reset-size10.size10,.katex .sizing.reset-size10.size10{font-size:1em}.katex .delimsizing.size1{font-family:KaTeX_Size1}.katex .delimsizing.size2{font-family:KaTeX_Size2}.katex .delimsizing.size3{font-family:KaTeX_Size3}.katex .delimsizing.size4{font-family:KaTeX_Size4}.katex .delimsizing.mult .delim-size1>span{font-family:KaTeX_Size1}.katex .delimsizing.mult .delim-size4>span{font-family:KaTeX_Size4}.katex .nulldelimiter{display:inline-block;width:.12em}.katex .op-symbol{position:relative}.katex .op-symbol.small-op{font-family:KaTeX_Size1}.katex .op-symbol.large-op{font-family:KaTeX_Size2}.katex .accent>.vlist>span,.katex .op-limits>.vlist>span{text-align:center}.katex .accent .accent-body>span{width:0}.katex .accent .accent-body.accent-vec>span{position:relative;left:.326em}.katex .mtable .vertical-separator{display:inline-block;margin:0 -.025em;border-right:.05em solid #000}.katex .mtable .arraycolsep{display:inline-block}.katex .mtable .col-align-c>.vlist{text-align:center}.katex .mtable .col-align-l>.vlist{text-align:left}.katex .mtable .col-align-r>.vlist{text-align:right}
+</style>
+
+<style>
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family:   "HelveticaNeue-Light", sans-serif, "宋体","Segoe WPC", "Segoe UI", "SFUIText-Light","Droid Sans Fallback";
+	font-size: 18px;
+	padding: 0 12px;
+	line-height: 1.6;
+	word-wrap: break-word;
+	color: #333333;
+}
+
+.content-wrapper{
+	max-width: 860px;
+    margin: 0 auto;
+    padding: 20px 30px 40px 30px;
+    padding-top: 20px;
+    padding-bottom: 100px;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	color: #4080D0;
+	text-decoration: none;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom: 1px solid #eee;
+}
+
+
+h2{
+	padding-bottom: .3em;
+    font-size: 2em;
+    line-height: 1.225;
+    border-bottom: 1px solid #eee;
+}
+
+h3{
+	font-size: 1.75em;
+    line-height: 1.225;
+}
+
+h1, h2, h3 {
+	font-weight: bold;
+}
+
+h1 code,
+h2 code,
+h3 code,
+h4 code,
+h5 code,
+h6 code {
+	font-size: inherit;
+	line-height: auto;
+}
+
+a:hover {
+	color: #4080D0;
+	text-decoration: underline;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left: 5px solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 14px;
+	line-height: 19px;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+.mac code {
+	font-size: 12px;
+	line-height: 18px;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+/** Theming */
+
+.vscode-light,
+.vscode-light pre code {
+	color: rgb(30, 30, 30);
+}
+
+.vscode-dark,
+.vscode-dark pre code {
+	color: #DDD;
+}
+
+.vscode-high-contrast,
+.vscode-high-contrast pre code {
+	color: white;
+}
+
+.vscode-light code {
+	color: #A31515;
+}
+
+.vscode-dark code {
+	color: #D7BA7D;
+}
+
+.vscode-light pre:not(.hljs),
+.vscode-light code > div {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre:not(.hljs),
+.vscode-dark code > div {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre:not(.hljs),
+.vscode-high-contrast code > div {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+.vscode-light blockquote,
+.vscode-dark blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.vscode-high-contrast blockquote {
+	background: transparent;
+	border-color: #fff;
+}
+</style>
+
+<style>
+/*
+
+Arduino® Light Theme - Stefania Mellai <s.mellai@arduino.cc>
+
+*/
+
+.hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  background: #FFFFFF;
+}
+
+.hljs,
+.hljs-subst {
+  color: #434f54;
+}
+
+.hljs-keyword,
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-doctag,
+.hljs-name {
+  color: #00979D;
+}
+
+.hljs-built_in,
+.hljs-literal,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition {
+  color: #D35400;
+}
+
+.hljs-regexp,
+.hljs-symbol,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo {
+  color: #00979D;
+}
+
+.hljs-type,
+.hljs-string,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion {
+  color: #005C5F;
+}
+
+.hljs-title,
+.hljs-section {
+  color: #880000;
+  font-weight: bold;
+}
+
+.hljs-comment {
+  color: rgba(149,165,166,.8);
+}
+
+.hljs-meta-keyword {
+  color: #728E00;
+}
+
+.hljs-meta {
+  color: #434f54;
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}
+
+.hljs-function {
+  color: #728E00;
+}
+
+.hljs-number {
+  color: #8A7B52;  
+}
+
+</style>
+
+<style>
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+.table-of-contents li{
+	list-style-type: initial;
+}
+</style>
+
+</head>
+<body>
+    <div class="content-wrapper">
+        <nav class="table-of-contents"></nav><p><img src="image/Readme/1664886254246.png" alt="1664886254246"></p>
+<p>In this tutorial i will show you how to build an Erlang Web Api using Nova Framework and Redis as a data store.</p>
+<p><img src="image/Readme/1664883753188.png" alt="1664883753188"></p>
+<p>This will be a simple web api supporting the following operations over a group of users.</p>
+<ul>
+<li>Create user</li>
+<li>Update user</li>
+<li>Delete user</li>
+<li>Get user by id</li>
+<li>Get all users</li>
+</ul>
+<p><strong>The repository containing the code as well as the tutorial can be found</strong> <a href="https://github.com/sanzor/Nova_Api">here</a></p>
+<hr>
+<p>For those of you that have already installed the prerequisites which are : Erlang , Rebar,Nova  **you can skip this part:</p>
+<p><strong>## Setup</strong></p>
+<ol>
+<li>Install Redis on your computer and start the redis server using the command <code>redis-server</code></li>
+<li>Installing Erlang: <a href="https://adoptingerlang.org/docs/development/setup/">Setup | Adopting Erlang</a></li>
+<li>Installing Rebar3 <a href="http://rebar3.org/docs/getting-started/">Getting Started | Rebar3</a></li>
+<li>Install Nova Framework using this script:<pre class='hljs'><code><div>sh -c <span class="hljs-string">&quot;<span class="hljs-subst">$(sh -c <span class="hljs-string">&quot;<span class="hljs-subst">$(curl -fsSL https://raw.githubusercontent.com/novaframework/
+rebar3_nova/master/install.sh)</span>&quot;</span>)</span>&quot;</span>
+</div></code></pre>
+</li>
+</ol>
+<p><strong>Create a new project in the terminal :</strong></p>
+<p>Run the following command:</p>
+<pre class='hljs'><code><div>rebar3 new nova fcourse
+</div></code></pre>
+<p>This tells rebar to create a new project named <code>fcourse</code> using the <code>nova</code> template.</p>
+<p>First thing we are going to edit is the <code>rebar.config</code> file by adding the redis client library dependency like below:</p>
+<pre class='hljs'><code><div><span class="hljs-comment"># rebar.config</span>
+
+{deps, [
+        nova,
+        {flatlog, <span class="hljs-string">&quot;0.1.2&quot;</span>},
+        {eredis,{git,<span class="hljs-string">&quot;https://github.com/wooga/eredis.git&quot;</span>,{branch,<span class="hljs-string">&quot;master&quot;</span>}}} 
+       ]}.
+</div></code></pre>
+<p>Next</p>
+<p>Add the <code>eredis</code> depedency in the <code>src/fcourse.app.src</code> file :</p>
+<pre class='hljs'><code><div>{application, fcourse,
+ [{description, &quot;fcourse managed by Nova&quot;},
+  {vsn, &quot;0.1.0&quot;},
+  {registered, []},
+  {mod, { fcourse_app, []}},
+  {included_applications, []},
+  {applications,
+   [
+    kernel,
+    stdlib,
+    nova,
+    eredis
+   ]},
+  {env,[]},
+  {modules, []},
+  {maintainers, []},
+  {licenses, [&quot;Apache 2.0&quot;]},
+  {links, []}
+ ]}.
+
+</div></code></pre>
+<p><strong>dev_sys.config.src</strong></p>
+<p>Edit your <code>config/dev_sys.config.src</code> file  in the <code>plugins:pre_request </code>so that you enable the below options:</p>
+<p><img src="image/Readme/1665083264209.png" alt="1665083264209"></p>
+<p>In production nova will use the <code>prod_sys.config.src </code>so you will need to edit that file too like above.</p>
+<hr>
+<p>Defining the routes:</p>
+<p>In the router module the routes are defined as follows:  <code>{Path, {Controller_Name,Controller_Method}, #{methods =&gt;[options, HTTPMethod]}</code></p>
+<p>In the <code>fcourse_router.erl</code> which contains the routing logic add the specific CRUD methods like below:</p>
+<pre class='hljs'><code><div><span class="hljs-comment">#  fcourse_router.erl</span>
+-module(fcourse_router).
+-behaviour(nova_router).
+
+-<span class="hljs-built_in">export</span>([
+         routes/1
+        ]).
+
+%% The Environment-variable is defined <span class="hljs-keyword">in</span> your sys.config <span class="hljs-keyword">in</span> {nova, [{environment, Value}]}
+routes(_Environment) -&gt;
+    [<span class="hljs-comment">#{prefix =&gt; &quot;/users&quot;,   # you cand add a prefix to your routes</span>
+      security =&gt; <span class="hljs-literal">false</span>,
+      routes =&gt; [
+        {<span class="hljs-string">&quot;/&quot;</span>, { fcourse_main_controller, index}, <span class="hljs-comment">#{methods =&gt; [options,get]}},</span>
+        {<span class="hljs-string">&quot;/add&quot;</span>,{fcourse_main_controller,add},<span class="hljs-comment">#{methods=&gt;[post]}},</span>
+        {<span class="hljs-string">&quot;/update&quot;</span>,{fcourse_main_controller,add},<span class="hljs-comment">#{methods=&gt;[update]}},</span>
+        {<span class="hljs-string">&quot;/delete&quot;</span>,{fcourse_main_controller,delete},<span class="hljs-comment">#{methods=&gt;[delete]}},</span>
+        {<span class="hljs-string">&quot;/get&quot;</span>,{fcourse_main_controller,get},<span class="hljs-comment">#{methods=&gt;[get]}},</span>
+        {<span class="hljs-string">&quot;/getall&quot;</span>,{fcourse_main_controller,getall},<span class="hljs-comment">#{methods=&gt;[get]}},</span>
+        {<span class="hljs-string">&quot;/assets/[...]&quot;</span>, <span class="hljs-string">&quot;assets&quot;</span>}
+                ]
+      }].
+</div></code></pre>
+<p><strong># Implementing the CRUD endpoints:</strong></p>
+<p>We will write the logic for the CRUD endpoints in the controller which is <code>controllers/fcourse_main_controller.erl</code> file.</p>
+<p>Adding the endpoint methods definition:</p>
+<pre class='hljs'><code><div>-export([get/1,
+<span class="hljs-code">         getall/1,
+         add/1,
+         delete/1,
+         update/1]).
+</span>
+</div></code></pre>
+<p>We start by exporting the CRUD methods in our controller module. Each method has an arity of <code>1</code> that means it receives only one argument.</p>
+<p>We then start implementing all the above methods:</p>
+<p><strong>ENDPOINT: Add</strong></p>
+<pre class='hljs'><code><div>add(<span class="hljs-comment">#{json := #{&lt;&lt;&quot;id&quot;&gt;&gt; := Id , &lt;&lt;&quot;age&quot;&gt;&gt; := Age}})-&gt;</span>
+    try
+        {ok,Port}=eredis:start_link(), 
+        {ok,Result}=eredis:q(Port,[<span class="hljs-string">&quot;hset&quot;</span>,<span class="hljs-string">&quot;users&quot;</span>|[Id,Age]]),  
+        {json,200,<span class="hljs-comment">#{},#{&lt;&lt;&quot;result&quot;&gt;&gt; =&gt; Result}}  </span>
+    catch
+        Error:Cause -&gt; {json,500,<span class="hljs-comment">#{&lt;&lt;&quot;Content-Type&quot;&gt;&gt; =&gt; &lt;&lt;&quot;json&quot;&gt;&gt;},#{&lt;&lt;&quot;error&quot;&gt;&gt; =&gt;Error , &lt;&lt;&quot;cause&quot;&gt;&gt; =&gt; Cause}}</span>
+    end.
+</div></code></pre>
+<p>The argument is a map that holds a key <code>json</code>. The <code>json</code> key contains a json like the one below:</p>
+<pre class='hljs'><code><div>{
+  <span class="hljs-string">&quot;id&quot;</span>:  SomeValue,
+  <span class="hljs-string">&quot;age&quot;</span>: SomeOtherValue
+}
+
+</div></code></pre>
+<p>We are deconstructing the input argument  and binding the values of the json like <code>id</code> and the <code>age</code>  to variables (<code>Id</code> and <code>Age</code>) . We then use the bound variables in our logic:</p>
+<pre class='hljs'><code><div>        {ok,Port}=eredis:start_link(), 
+        {ok,Result}=eredis:q(Port,[<span class="hljs-string">&quot;hset&quot;</span>,<span class="hljs-string">&quot;users&quot;</span>|[Id,Age]]),  
+        {json,200,<span class="hljs-comment">#{},#{&lt;&lt;&quot;result&quot;&gt;&gt; =&gt; Result}}</span>
+</div></code></pre>
+<ul>
+<li>We are starting a connection to redis that will be stored in the <code>Port</code> variable.</li>
+<li>We then issue the redis <code>HSET</code> command , using the <code>Port</code> as the connection , <code>users</code> as the hash and <code>[Id,Age]</code> as the Key-Value.</li>
+<li>We then return a json , a status code <code>200</code> , and the json of the form:</li>
+</ul>
+<pre class='hljs'><code><div>{
+   <span class="hljs-string">&quot;result&quot;</span>:Result
+}
+</div></code></pre>
+<p>So this is how we add items !</p>
+<hr>
+<p><strong>ENDPOINT: Get by Id</strong></p>
+<p>In the same file which is <code>fcourse_main_controller</code> define a new endpoint for fetching users by id</p>
+<pre class='hljs'><code><div>get(<span class="hljs-comment">#{ bindings := #{&lt;&lt;&quot;user&quot;&gt;&gt; := UserId}})-&gt;</span>
+    try
+        {ok,Port}=eredis:start_link(),
+        <span class="hljs-keyword">case</span> eredis:q(Port,[<span class="hljs-string">&quot;hget&quot;</span>,<span class="hljs-string">&quot;users&quot;</span>,UserId]) of
+            {ok,Result} -&gt;{json,200,<span class="hljs-comment">#{},#{&lt;&lt;&quot;UserId&quot;&gt;&gt; =&gt; list_to_binary(UserId) , &lt;&lt;&quot;value&quot;&gt;&gt; =&gt; Result}};</span>
+             _ -&gt; {status,404}
+        end
+    catch
+        Error:Cause -&gt; {json,500,<span class="hljs-comment">#{},#{&lt;&lt;&quot;error&quot;&gt;&gt; =&gt;Error , &lt;&lt;&quot;cause&quot;&gt;&gt; =&gt; Cause}}</span>
+    end.
+</div></code></pre>
+<p>Instead of a <code>json</code>  we receive a <code>query string</code> , for example <code>/users/get?user=13</code></p>
+<p>We could add other variables in the query string separated by comma e.g:</p>
+<p><code>#{ bindings := #{&lt;&lt;&quot;user&quot;&gt;&gt; := UserId , &lt;&lt;&quot;age&quot;&gt;&gt; := Age}}</code></p>
+<p>This would translate to :  <code>users/get?user=UserId&amp;age=Age</code></p>
+<ul>
+<li>we start a connection to redis</li>
+<li>we use the redis command <code>HGET</code>, which fetches the key <code>UserId</code> from the hash <code>users</code> and treat its result with a <code>case</code> clause specific to erlang</li>
+</ul>
+<pre class='hljs'><code><div><span class="hljs-keyword">case</span> eredis:q(Port,[<span class="hljs-string">&quot;hget&quot;</span>,<span class="hljs-string">&quot;users&quot;</span>,UserId]) of
+            {ok,Result} -&gt;{json,200,<span class="hljs-comment">#{},#{&lt;&lt;&quot;UserId&quot;&gt;&gt; =&gt; list_to_binary(UserId) , &lt;&lt;&quot;value&quot;&gt;&gt; =&gt; Result}};</span>
+             _ -&gt; {status,404}
+        end
+</div></code></pre>
+<ul>
+<li>If result of eredis <code>HGET</code> command is of the form <code>{ok,Result}</code> we return a json with the statuscode <code>200</code>  and the json <code>{ &quot;UserId&quot;: UserId , &quot;value&quot; : Result }</code> , and we also use <code>list_to_binary </code> to transform the value in a binary .</li>
+<li>If the result is anything else (<code>_</code> means wildcard , we don't care) ,we return a status code of <code>404</code></li>
+</ul>
+<p>Everything is in a <code>try-catch </code> clause in case connection to redis fails in which case we can pattern match on the <code>Error:Cause</code> and  return a json with the status code <code>500</code> and the said <code>Error,Cause</code></p>
+<hr>
+<p><strong>ENDPOINT: Get All</strong></p>
+<pre class='hljs'><code><div>getall(_Request)-&gt;
+    try
+        {ok,Port}=eredis:start_link(),
+        {ok,Result}=eredis:q(Port,[&quot;hgetall&quot;,&quot;users&quot;]),
+        io:format(&quot;List: ~p&quot;,[Result]),
+        TupleList=split(Result),
+        io:format(&quot;Formatted : ~p&quot;,[TupleList]),
+        {json,200,#{},#{&lt;&lt;&quot;users&quot;&gt;&gt; =&gt; TupleList}}
+    catch
+        Error:Cause -&gt; {json,500,#{},#{ &lt;&lt;&quot;error&quot;&gt;&gt; =&gt; Error , &lt;&lt;&quot;cause&quot;&gt;&gt; =&gt; Cause}}
+    end.
+</div></code></pre>
+<p>We run the redis command <code>HGETALL</code> on the <code>users</code> key, which is a hashset and we receive a result of the form:</p>
+<pre class='hljs'><code><div> [Key1,Value1,Key2,Value2.....]
+</div></code></pre>
+<p>We want to return a list of key values so we will use these two helper methods:</p>
+<p>Helper methods:</p>
+<pre class='hljs'><code><div>
+<span class="hljs-comment"># first method</span>
+<span class="hljs-comment"># checks if argument is list and then if the list is odd , nr of keys has to be equal to those of values </span>
+
+split(List) when is_list(List) -&gt;
+    <span class="hljs-keyword">case</span> length(List) rem 2 of
+        0 -&gt; split(List,[]);     <span class="hljs-comment">#calls the second method</span>
+        1 -&gt; throw(odd_list)   
+end.
+
+<span class="hljs-comment">#second method</span>
+split([],Accu)-&gt;Accu;
+split([Key,Value|Rest],Accu)-&gt;split(Rest,[<span class="hljs-comment">#{Key=&gt; Value}|Accu]).</span>
+
+</div></code></pre>
+<p>The second method is a tailrecursive one.</p>
+<p><code>split([],Accu)-&gt;Accu;</code></p>
+<p>The first clause is the stop condition, when the first argument is the <code>[]</code> which means an empty list,therefore,  we return the second argument , the accumulator (<code>Accu</code>).</p>
+<p><code>split([Key,Value|Rest],Accu)-&gt;split(Rest,[#{Key=&gt; Value}|Accu]).</code></p>
+<p>The second clause decomposes the first argument in <code>[Key,Value | Rest]</code> basically extracting 2 elements at a time from the original list , and calling itself again with <code>Rest</code> as the new starting list , and   the map <code>#{Key =&gt; Value}</code> appended on top of the <code>Accumulator</code>.</p>
+<hr>
+<p><strong>ENDPOINT: Delete</strong></p>
+<pre class='hljs'><code><div>delete(#{bindings := #{&lt;&lt;&quot;id&quot;&gt;&gt; :=Id}})-&gt;
+    try
+        {ok,Port}=eredis:start_link(),
+        {ok,_}=eredis:q(Port,[&quot;hdel&quot;,&quot;users&quot;,Id]),
+        {status,200}
+    catch
+        Error:Clause -&gt;{json,500,#{},#{&lt;&lt;&quot;error&quot;&gt;&gt; =&gt; Error ,&lt;&lt;&quot;cause&quot;&gt;&gt; =&gt; Clause}}
+    end.
+
+</div></code></pre>
+<p>Nothing special here , we again use <code>bindings</code> , meaning we get a query string and we want to extract the <code>id</code> of the record  <code>Id</code> which we want to delete, eg:  <code>/users/delete?id=33</code></p>
+<p>We start connection to redis , and then issue the redis command <code>HDEL</code> which deletes the key <code>Id</code> from the hash  <code>users</code>.</p>
+<p>When exception we return status <code>500</code>  and the json <code>{ &quot;error&quot;: Error ,&quot;cause&quot;: Cause}</code></p>
+<hr>
+<p><strong>ENDPOINT: Update</strong></p>
+<p>In this endpoint we just want to update the <code>age</code> of the user.</p>
+<pre class='hljs'><code><div>update(#{json := #{&lt;&lt;&quot;user&quot;&gt;&gt; := User , &lt;&lt;&quot;new<span class="hljs-emphasis">_age&quot;&gt;&gt; := NewAge}})-&gt;
+    try
+        {ok,Port}=eredis:start_</span>link(),
+<span class="hljs-code">        case eredis:q(Port,[&quot;hget&quot;,&quot;users&quot;,User]) of
+            {ok,OldAge} -&gt; {ok,_}=eredis:q(Port,[&quot;hset&quot;,&quot;users&quot;|[User,NewAge]]),
+                           {status,200};
+            _ -&gt;{status,404}
+        end
+    catch
+        Error:Clause -&gt; {status,500,#{},#{&lt;&lt;&quot;error&quot;&gt;&gt; =&gt; Error ,&lt;&lt;&quot;clause&quot;&gt;&gt; =&gt;Clause}}
+    end.
+</span>
+</div></code></pre>
+<p>We the <code>HGET</code> redis command like we did in the get-by-id endpoint.</p>
+<p>If redis returns us the result <code>{ok,OldAge} </code>we then set the value of the key <code>User </code>within the <code>users </code>hash to value <code>Age </code>, and return status code <code>200</code>.</p>
+<p>Otherwise we return the status code <code>500</code> with the <code>{ &quot;error&quot;: Error ,&quot;cause&quot;: Cause}</code> json.</p>
+<hr>
+<p><strong>Putting it all togeter in the controller module:</strong></p>
+<p><strong>fcourse_main_controller</strong></p>
+<pre class='hljs'><code><div>-module(fcourse<span class="hljs-emphasis">_main_</span>controller).
+-export([get/1,
+<span class="hljs-code">         getall/1,
+         add/1,
+         delete/1,
+         update/1]).
+</span>
+split(List) when is<span class="hljs-emphasis">_list(List) -&gt;
+    case length(List) rem 2 of
+        0 -&gt; split(List,[]);
+        1 -&gt; throw(odd_</span>list)
+end.
+split([],Accu)-&gt;Accu;
+split([Key,Value|Rest],Accu)-&gt;split(Rest,[#{Key =&gt; Value}|Accu]).
+
+get(#{ bindings := #{&lt;&lt;&quot;user&quot;&gt;&gt; := UserId}})-&gt;
+<span class="hljs-code">    try
+        {ok,Port}=eredis:start_link(),
+        case eredis:q(Port,[&quot;hget&quot;,&quot;users&quot;,UserId]) of
+            {ok,Result} -&gt;{json,200,#{},#{&lt;&lt;&quot;UserId&quot;&gt;&gt; =&gt; list_to_binary(UserId) , &lt;&lt;&quot;value&quot;&gt;&gt; =&gt; Result}};
+             _ -&gt; {status,404}
+        end
+    catch
+        Error:Cause -&gt; {json,500,#{&lt;&lt;&quot;Authorization&quot;&gt;&gt; =&gt; &lt;&lt;&quot;Basic 1212121&quot;&gt;&gt;, &lt;&lt;&quot;Content-Type&quot;&gt;&gt; =&gt; &lt;&lt;&quot;json&quot;&gt;&gt;},#{&lt;&lt;&quot;error&quot;&gt;&gt; =&gt;Error , &lt;&lt;&quot;cause&quot;&gt;&gt; =&gt; Cause}}
+    end.
+</span>
+getall(<span class="hljs-emphasis">_Request)-&gt;
+    try
+        {ok,Port}=eredis:start_</span>link(),
+<span class="hljs-code">        {ok,Result}=eredis:q(Port,[&quot;hgetall&quot;,&quot;users&quot;]),
+        io:format(&quot;List: ~p&quot;,[Result]),
+        TupleList=split(Result),
+        io:format(&quot;Formatted : ~p&quot;,[TupleList]),
+        {json,200,#{},#{&lt;&lt;&quot;users&quot;&gt;&gt; =&gt; TupleList}}
+    catch
+        Error:Cause -&gt; {json,500,#{},#{ &lt;&lt;&quot;error&quot;&gt;&gt; =&gt; Error , &lt;&lt;&quot;cause&quot;&gt;&gt; =&gt; Cause}}
+    end.
+add(#{json := #{&lt;&lt;&quot;id&quot;&gt;&gt; := Id , &lt;&lt;&quot;age&quot;&gt;&gt; := Age}})-&gt;
+    try
+        {ok,Port}=eredis:start_link(),
+        {ok,Result}=eredis:q(Port,[&quot;hset&quot;,&quot;users&quot;|[Id,Age]]),
+        {json,200,#{},#{&lt;&lt;&quot;result&quot;&gt;&gt; =&gt; Result}}
+    catch
+        Error:Cause -&gt; {json,500,#{&lt;&lt;&quot;Content-Type&quot;&gt;&gt; =&gt; &lt;&lt;&quot;json&quot;&gt;&gt;},#{&lt;&lt;&quot;error&quot;&gt;&gt; =&gt;Error , &lt;&lt;&quot;cause&quot;&gt;&gt; =&gt; Cause}}
+    end.
+</span>
+delete(#{bindings := #{&lt;&lt;&quot;id&quot;&gt;&gt; :=Id}})-&gt;
+<span class="hljs-code">    try
+        {ok,Port}=eredis:start_link(),
+        {ok,_}=eredis:q(Port,[&quot;hdel&quot;,&quot;users&quot;,Id]),
+        {status,200}
+    catch
+        Error:Clause -&gt;{json,500,#{},#{&lt;&lt;&quot;error&quot;&gt;&gt; =&gt; Error ,&lt;&lt;&quot;cause&quot;&gt;&gt; =&gt; Clause}}
+    end.
+</span>
+update(#{json := #{&lt;&lt;&quot;user&quot;&gt;&gt; := User , &lt;&lt;&quot;new<span class="hljs-emphasis">_age&quot;&gt;&gt; := NewAge}})-&gt;
+    try
+        {ok,Port}=eredis:start_</span>link(),
+<span class="hljs-code">        case eredis:q(Port,[&quot;hget&quot;,&quot;users&quot;,User]) of
+            {ok,OldAge} -&gt; {ok,_}=eredis:q(Port,[&quot;hset&quot;,&quot;users&quot;|[User,NewAge]]),
+                           {status,200};
+            _ -&gt;{status,404}
+        end
+    catch
+        Error:Clause -&gt; {status,500,#{},#{&lt;&lt;&quot;error&quot;&gt;&gt; =&gt; Error ,&lt;&lt;&quot;clause&quot;&gt;&gt; =&gt;Clause}}
+    end.
+</span>
+
+</div></code></pre>
+<p><strong>Testing it:</strong></p>
+<p>In order for this to work you need to have <code>redis-server</code> installed on your computer and run the command <code>redis-server</code> in order to start the server to accept commands from our Nova API.</p>
+<p><strong>Run the application</strong></p>
+<p>From the root folder of the application run the command :  <code>rebar3 nova serve</code> , wait till all applications are booted ( wait till you get the blow output in the terminal ) :</p>
+<p><img src="image/Readme/1664566537315.png" alt=""><img src="image/Readme/1664565644564.png" alt=""></p>
+<p>Once the application is built , we have finished ! Voila !</p>
+<p>The application can be tested via postman like below:</p>
+<p><strong>Adding a user</strong></p>
+<p><img src="image/Readme/1665003590129.png" alt="1665003590129"></p>
+<p><strong>Fetching a user</strong></p>
+<p><img src="image/Readme/1665003790077.png" alt="1665003790077"></p>
+<p>A  step by step video implementation will also follow soon, stay tuned !</p>
+
+    </div>
+</body>
+</html>

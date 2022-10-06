@@ -17,7 +17,7 @@ get(#{ parsed_qs := #{<<"user">> := UserId}})->
     try
         {ok,Port}=eredis:start_link(),
         case eredis:q(Port,["hget","users",UserId]) of
-            {ok,Result} ->{json,200,#{},#{<<"UserId">> => UserId , <<"value">> => Result}};
+            {ok,Result} ->{json,200,#{},#{<<"id">> => UserId , <<"age">> => Result}};
              _ -> {status,404}
         end
     catch

@@ -51,7 +51,7 @@ First thing we are going to edit is the `rebar.config` file by adding the redis 
        ]}.
 ```
 
-Next 
+Next
 
 Add the `eredis` depedency in the `src/fcourse.app.src` file :
 
@@ -78,13 +78,12 @@ Add the `eredis` depedency in the `src/fcourse.app.src` file :
 
 ```
 
-Add the following plugin to the `config/dev_sys.config.src` file so that nova will know how to decode json:
-
-`{pre_request, nova_request_plugin, #{decode_json_body => true}}`
 
 **dev_sys.config.src**
 
-![1664944753773](image/Readme/1664944753773.png) `![1664944746826](image/Readme/1664944746826.png`
+Edit your `config/dev_sys.config.src` file  in the `plugins:pre_request `so that you enable the below options:
+
+![1665083264209](image/Readme/1665083264209.png)
 
 In production nova will use the `prod_sys.config.src `so you will need to edit that file too like above.
 
@@ -422,8 +421,10 @@ The application can be tested via postman like below:
 
 **Adding a user**
 
-![1664945181743](image/Readme/1664945181743.png)
+![1665003590129](image/Readme/1665003590129.png)
 
 **Fetching a user**
+
+![1665003790077](image/Readme/1665003790077.png)
 
 A  step by step video implementation will also follow soon, stay tuned !
